@@ -109,11 +109,11 @@ def create_new_sentence(word_list):
     current_node= word_list.get_head()
     while(current_node is not None):
         ch1=current_node.get_data()
-        print("1st",current_node.get_data())
+        #print("1st",current_node.get_data())
         current_node=current_node.get_next()
         if(current_node is not None):
             ch2= current_node.get_data()
-            print("2nd ",ch2)
+            ##print("2nd ",ch2)
         if(ch1 in l and ch2 in l):
             capitalize=True
             continue
@@ -147,5 +147,5 @@ word_list.add("l")
 word_list.add("u")
 word_list.add("e")
 result=create_new_sentence(word_list)
-print("res ",result)
+print(result)
                                                     
