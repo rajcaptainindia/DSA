@@ -104,21 +104,28 @@ class LinkedList:
 def create_new_sentence(word_list):
     new_sentence=""
     # Write your logic here
-    current_node=word_list.get_head()
+    l=["/","*"]
+    capitalize=False
+    current_node= word_list.get_head()
     while(current_node is not None):
         ch1=current_node.get_data()
-        capitalize=False
-       # new_sentence+=current_node.get_data()
+        print("1st",current_node.get_data())
         current_node=current_node.get_next()
-        print(ch1)
-        l=["/","*"]
         if(current_node is not None):
-            ch2=current_node.get_data()
-            print("ch2",ch2)
-            if(ch1 in l and ch2 in l):
-                print("--")
-                new_sentence=new_sentence+" "
-        
+            ch2= current_node.get_data()
+            print("2nd ",ch2)
+        if(ch1 in l and ch2 in l):
+            capitalize=True
+            continue
+        elif(ch1 in l):
+            new_sentence+=" "
+        else:
+            if(capitalize):
+                new_sentence+=ch1.upper()
+                capitalize=False
+            else:
+                new_sentence+=ch1
+            
     return new_sentence
 
 word_list=LinkedList()
@@ -140,5 +147,5 @@ word_list.add("l")
 word_list.add("u")
 word_list.add("e")
 result=create_new_sentence(word_list)
-print(result)
+print("res ",result)
                                                     
